@@ -1,3 +1,13 @@
 {
-  "produtos": []
+  "produtos": [
+    {
+      "id": "20260916190243144870",
+      "nome": "CANETA AZUL",
+      "unidade": "Caixa",
+      "quantidade": 53,
+      "minimo": 10,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:02"
+    }
+  ]
 }
