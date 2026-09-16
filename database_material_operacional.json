@@ -134,6 +134,15 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:34"
+    },
+    {
+      "id": "20260916193716940328",
+      "nome": "PILHA NORMAL AA",
+      "unidade": "Unidade",
+      "quantidade": 16,
+      "minimo": 2,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:37"
     }
   ]
 }
