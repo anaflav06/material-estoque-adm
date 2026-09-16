@@ -170,6 +170,15 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:41"
+    },
+    {
+      "id": "20260916194628862700",
+      "nome": "LAPÍS",
+      "unidade": "Unidade",
+      "quantidade": 2,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:46"
     }
   ]
 }
