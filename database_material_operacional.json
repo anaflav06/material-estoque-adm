@@ -62,6 +62,15 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:15"
+    },
+    {
+      "id": "20260916192304828656",
+      "nome": "BORRACHA",
+      "unidade": "Unidade",
+      "quantidade": 24,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:23"
     }
   ]
 }
