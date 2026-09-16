@@ -374,6 +374,11 @@ if "db_material" not in st.session_state:
     st.session_state.origem_banco = origem
 
 db = st.session_state.db_material
+for _p in db.get("produtos", []):
+    _p.setdefault("unidade_estoque", _p.get("unidade","Unidade"))
+    _p.setdefault("unidade_minimo", _p.get("unidade","Unidade"))
+    _p.setdefault("quantidade_por_embalagem", 1)
+
 
 # =========================================================
 # CABEÇALHO
@@ -512,7 +517,7 @@ with aba2:
             produto = {
                 "id": novo_id(),
                 "nome": nome.strip(),
-                "unidade": unidade,
+                "unidade": unidade,\n                "unidade_estoque": unidade,\n                "unidade_minimo": unidade,\n                "quantidade_por_embalagem": 1,
                 "quantidade": int(quantidade),
                 "minimo": int(minimo),
                 "observacao": observacao.strip(),
@@ -529,7 +534,7 @@ with aba2:
             st.session_state.db_material = db
 
             if sucesso:
-                st.success("Produto cadastrado e salvo.")
+                st.success("✅ Produto cadastrado e informações salvas com sucesso!")
                 st.rerun()
             else:
                 st.warning(msg)
@@ -538,66 +543,72 @@ with aba2:
 # ATUALIZAR ESTOQUE
 # =========================================================
 with aba3:
-    st.markdown("### Atualizar estoque")
-
+    st.markdown("### Atualizar / editar produto")
     if not produtos:
         st.info("Cadastre um produto primeiro.")
     else:
-        mapa = {
-            p["nome"]: p
-            for p in sorted(produtos, key=lambda x: x.get("nome", "").lower())
-        }
-
-        selecionado = st.selectbox(
-            "Produto",
-            list(mapa.keys()),
-            key="produto_atualizar"
-        )
-
+        mapa = {p["nome"]: p for p in sorted(produtos, key=lambda x: x.get("nome","").lower())}
+        selecionado = st.selectbox("Produto", list(mapa.keys()), key="produto_atualizar")
         produto = mapa[selecionado]
-
-        st.caption(
-            f"Estoque atual: {fmt_num(produto.get('quantidade',0))} "
-            f"{produto.get('unidade','Unidade')}"
-        )
+        opcoes = ["Unidade", "Caixa", "Pacote", "Rolo", "Quilograma", "Litro", "Par", "Outro"]
+        ue = produto.get("unidade_estoque", produto.get("unidade","Unidade"))
+        um = produto.get("unidade_minimo", produto.get("unidade","Unidade"))
 
         with st.form("atualizar_estoque"):
-            nova_quantidade = st.number_input(
-                "Nova quantidade em estoque",
-                min_value=0,
-                value=int(round(float(produto.get("quantidade", 0)))),
-                step=1
-            )
+            nome_editado = st.text_input("Nome do produto", value=produto.get("nome",""))
+            c1,c2=st.columns(2)
+            with c1:
+                nova_quantidade=st.number_input("Quantidade atual",min_value=0,value=int(produto.get("quantidade",0)),step=1)
+                nova_ue=st.selectbox("Unidade do estoque atual",opcoes,index=opcoes.index(ue) if ue in opcoes else 0)
+            with c2:
+                novo_minimo=st.number_input("Estoque mínimo",min_value=0,value=int(produto.get("minimo",0)),step=1)
+                nova_um=st.selectbox("Unidade do estoque mínimo",opcoes,index=opcoes.index(um) if um in opcoes else 0)
 
-            novo_minimo = st.number_input(
-                "Estoque mínimo",
-                min_value=0,
-                value=int(round(float(produto.get("minimo", 0)))),
-                step=1
-            )
+            conversao=int(produto.get("quantidade_por_embalagem",1) or 1)
+            if nova_ue != nova_um:
+                embalagem=nova_um if nova_um!="Unidade" else nova_ue
+                st.info("As unidades são diferentes. Informe a conversão para o cálculo da reposição.")
+                conversao=st.number_input(f"Quantas Unidades existem em 1 {embalagem}?",min_value=1,value=max(conversao,1),step=1)
 
-            salvar_atualizacao = st.form_submit_button(
-                "Salvar atualização",
-                use_container_width=True
-            )
+            observacao_editada=st.text_input("Observação",value=produto.get("observacao",""))
+            salvar_atualizacao=st.form_submit_button("💾 Salvar informações",use_container_width=True,type="primary")
 
         if salvar_atualizacao:
-            produto["quantidade"] = int(nova_quantidade)
-            produto["minimo"] = int(novo_minimo)
-            produto["atualizado_em"] = datetime.now().strftime("%d/%m/%Y %H:%M")
-
-            sucesso, msg = salvar_banco(
-                db,
-                f"Atualiza estoque: {produto['nome']}"
-            )
-
-            st.session_state.db_material = db
-
-            if sucesso:
-                st.success("Estoque atualizado e salvo.")
-                st.rerun()
+            duplicado=any(p.get("id")!=produto.get("id") and p.get("nome","").strip().lower()==nome_editado.strip().lower() for p in produtos)
+            if not nome_editado.strip():
+                st.error("Informe o nome do produto.")
+            elif duplicado:
+                st.error("Já existe outro produto com esse nome.")
             else:
-                st.warning(msg)
+                produto.update({
+                    "nome":nome_editado.strip(),"quantidade":int(nova_quantidade),"minimo":int(novo_minimo),
+                    "unidade":nova_ue,"unidade_estoque":nova_ue,"unidade_minimo":nova_um,
+                    "quantidade_por_embalagem":int(conversao),"observacao":observacao_editada.strip(),
+                    "atualizado_em":datetime.now().strftime("%d/%m/%Y %H:%M")
+                })
+                sucesso,msg=salvar_banco(db,f"Atualiza produto: {produto['nome']}")
+                st.session_state.db_material=db
+                if sucesso: st.success("✅ Informações salvas com sucesso!")
+                else: st.error(f"❌ Erro ao salvar: {msg}")
+
+        st.divider()
+        st.markdown("#### Excluir produto")
+        if st.button("🗑️ Excluir produto",key=f"excluir_{produto.get('id','')}"):
+            st.session_state["excluir_id"]=produto.get("id")
+        if st.session_state.get("excluir_id")==produto.get("id"):
+            st.warning(f"Confirma a exclusão de **{produto.get('nome','')}**?")
+            x1,x2=st.columns(2)
+            if x1.button("Sim, excluir",use_container_width=True,type="primary"):
+                db["produtos"]=[p for p in db["produtos"] if p.get("id")!=produto.get("id")]
+                sucesso,msg=salvar_banco(db,f"Exclui produto: {produto.get('nome','')}")
+                st.session_state.db_material=db
+                st.session_state.pop("excluir_id",None)
+                if sucesso:
+                    st.success("✅ Produto excluído e alteração salva com sucesso!")
+                    st.rerun()
+                else: st.error(f"❌ Erro ao excluir: {msg}")
+            if x2.button("Cancelar",use_container_width=True):
+                st.session_state.pop("excluir_id",None); st.rerun()
 
 # =========================================================
 # WHATSAPP
