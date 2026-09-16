@@ -89,6 +89,15 @@
       "minimo": 2,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:25"
+    },
+    {
+      "id": "20260916193235208624",
+      "nome": "FITA DUPLA FACE",
+      "unidade": "Unidade",
+      "quantidade": 1,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:32"
     }
   ]
 }
