@@ -35,6 +35,15 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:04"
+    },
+    {
+      "id": "20260916191429780976",
+      "nome": "RÉGUA",
+      "unidade": "Unidade",
+      "quantidade": 8,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:14"
     }
   ]
 }
