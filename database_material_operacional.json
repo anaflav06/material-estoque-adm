@@ -125,6 +125,15 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:34"
+    },
+    {
+      "id": "20260916193451242446",
+      "nome": "BATERIA CR2016 3V",
+      "unidade": "Unidade",
+      "quantidade": 3,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:34"
     }
   ]
 }
