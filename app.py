@@ -517,7 +517,10 @@ with aba2:
             produto = {
                 "id": novo_id(),
                 "nome": nome.strip(),
-                "unidade": unidade,\n                "unidade_estoque": unidade,\n                "unidade_minimo": unidade,\n                "quantidade_por_embalagem": 1,
+                "unidade": unidade,
+                "unidade_estoque": unidade,
+                "unidade_minimo": unidade,
+                "quantidade_por_embalagem": 1,
                 "quantidade": int(quantidade),
                 "minimo": int(minimo),
                 "observacao": observacao.strip(),
