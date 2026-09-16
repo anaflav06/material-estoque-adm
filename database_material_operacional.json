@@ -143,6 +143,15 @@
       "minimo": 2,
       "observacao": "",
       "atualizado_em": "16/09/2026 19:37"
+    },
+    {
+      "id": "20260916193813316652",
+      "nome": "CLIPS",
+      "unidade": "Caixa",
+      "quantidade": 10,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/09/2026 19:38"
     }
   ]
 }
