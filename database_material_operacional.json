@@ -3,11 +3,14 @@
     {
       "id": "20260916190243144870",
       "nome": "CANETA AZUL",
-      "unidade": "Caixa",
+      "unidade": "Unidade",
       "quantidade": 94,
-      "minimo": 1,
+      "minimo": 50,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:16"
+      "atualizado_em": "16/09/2026 20:51",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916190336888278",
@@ -16,7 +19,10 @@
       "quantidade": 14,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:16"
+      "atualizado_em": "16/09/2026 19:16",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916190414203664",
@@ -25,7 +31,10 @@
       "quantidade": 3,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:06"
+      "atualizado_em": "16/09/2026 19:06",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916190448711776",
@@ -34,7 +43,10 @@
       "quantidade": 9,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:04"
+      "atualizado_em": "16/09/2026 19:04",
+      "unidade_estoque": "Caixa",
+      "unidade_minimo": "Caixa",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916191429780976",
@@ -43,7 +55,10 @@
       "quantidade": 8,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:14"
+      "atualizado_em": "16/09/2026 19:14",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916191446592788",
@@ -52,7 +67,10 @@
       "quantidade": 1,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:14"
+      "atualizado_em": "16/09/2026 19:14",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916191526947155",
@@ -61,7 +79,10 @@
       "quantidade": 9,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:15"
+      "atualizado_em": "16/09/2026 19:15",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916192304828656",
@@ -70,7 +91,10 @@
       "quantidade": 24,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:23"
+      "atualizado_em": "16/09/2026 19:23",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916192347435379",
@@ -79,7 +103,10 @@
       "quantidade": 14,
       "minimo": 1,
       "observacao": "20 UNIDADES NA CAIXA",
-      "atualizado_em": "16/09/2026 19:24"
+      "atualizado_em": "16/09/2026 19:24",
+      "unidade_estoque": "Caixa",
+      "unidade_minimo": "Caixa",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916192515889562",
@@ -88,7 +115,10 @@
       "quantidade": 21,
       "minimo": 2,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:25"
+      "atualizado_em": "16/09/2026 19:25",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193235208624",
@@ -97,7 +127,10 @@
       "quantidade": 1,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:32"
+      "atualizado_em": "16/09/2026 19:32",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193314222424",
@@ -106,7 +139,10 @@
       "quantidade": 11,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:33"
+      "atualizado_em": "16/09/2026 19:33",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193400937708",
@@ -115,7 +151,10 @@
       "quantidade": 1,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:34"
+      "atualizado_em": "16/09/2026 19:34",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193434615529",
@@ -124,7 +163,10 @@
       "quantidade": 4,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:34"
+      "atualizado_em": "16/09/2026 19:34",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193451242446",
@@ -133,7 +175,10 @@
       "quantidade": 3,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:34"
+      "atualizado_em": "16/09/2026 19:34",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193716940328",
@@ -142,7 +187,10 @@
       "quantidade": 16,
       "minimo": 2,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:37"
+      "atualizado_em": "16/09/2026 19:37",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193813316652",
@@ -151,7 +199,10 @@
       "quantidade": 10,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:38"
+      "atualizado_em": "16/09/2026 19:38",
+      "unidade_estoque": "Caixa",
+      "unidade_minimo": "Caixa",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916193952555413",
@@ -160,7 +211,10 @@
       "quantidade": 3,
       "minimo": 2,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:39"
+      "atualizado_em": "16/09/2026 19:39",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916194123313472",
@@ -169,7 +223,10 @@
       "quantidade": 17,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:41"
+      "atualizado_em": "16/09/2026 19:41",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916194628862700",
@@ -178,7 +235,10 @@
       "quantidade": 2,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:46"
+      "atualizado_em": "16/09/2026 19:46",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916195009238877",
@@ -187,7 +247,10 @@
       "quantidade": 14,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:50"
+      "atualizado_em": "16/09/2026 19:50",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916195448698928",
@@ -196,7 +259,10 @@
       "quantidade": 6,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:54"
+      "atualizado_em": "16/09/2026 19:54",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916195536328896",
@@ -205,7 +271,10 @@
       "quantidade": 5,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:55"
+      "atualizado_em": "16/09/2026 19:55",
+      "unidade_estoque": "Pacote",
+      "unidade_minimo": "Pacote",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916195705751846",
@@ -214,7 +283,10 @@
       "quantidade": 1,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:57"
+      "atualizado_em": "16/09/2026 19:57",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     },
     {
       "id": "20260916195823075903",
@@ -223,7 +295,10 @@
       "quantidade": 2,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "16/09/2026 19:58"
+      "atualizado_em": "16/09/2026 19:58",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1
     }
   ]
 }
