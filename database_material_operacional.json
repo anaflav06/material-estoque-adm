@@ -323,6 +323,18 @@
       "minimo": 1,
       "observacao": "10 UNIDADES EM CADA PACOTE",
       "atualizado_em": "17/09/2026 20:39"
+    },
+    {
+      "id": "20260917204118372832",
+      "nome": "CAPA DE CHUVA",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 15,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "17/09/2026 20:41"
     }
   ]
 }
