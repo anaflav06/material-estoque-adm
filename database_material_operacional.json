@@ -98,12 +98,12 @@
     },
     {
       "id": "20260916192347435379",
-      "nome": "GRAPOS",
+      "nome": "GRAMPOS",
       "unidade": "Caixa",
       "quantidade": 14,
       "minimo": 1,
       "observacao": "20 UNIDADES NA CAIXA",
-      "atualizado_em": "16/09/2026 19:24",
+      "atualizado_em": "17/09/2026 20:33",
       "unidade_estoque": "Caixa",
       "unidade_minimo": "Caixa",
       "quantidade_por_embalagem": 1
