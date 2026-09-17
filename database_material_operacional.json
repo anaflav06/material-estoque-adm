@@ -311,6 +311,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "17/09/2026 20:36"
+    },
+    {
+      "id": "20260917203945586927",
+      "nome": "PASTA  L",
+      "unidade": "Pacote",
+      "unidade_estoque": "Pacote",
+      "unidade_minimo": "Pacote",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 6,
+      "minimo": 1,
+      "observacao": "10 UNIDADES EM CADA PACOTE",
+      "atualizado_em": "17/09/2026 20:39"
     }
   ]
 }
