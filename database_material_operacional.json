@@ -407,6 +407,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "23/09/2026 14:09"
+    },
+    {
+      "id": "20260923141125026280",
+      "nome": "CARREGADOR COMPLETO TIPO V8",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 4,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "23/09/2026 14:11"
     }
   ]
 }
