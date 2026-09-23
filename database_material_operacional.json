@@ -359,6 +359,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "23/09/2026 14:00"
+    },
+    {
+      "id": "20260923140140079828",
+      "nome": "MOUSE",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 7,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "23/09/2026 14:01"
     }
   ]
 }
