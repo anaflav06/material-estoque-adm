@@ -395,6 +395,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "23/09/2026 14:09"
+    },
+    {
+      "id": "20260923140932209917",
+      "nome": "FONTE DE CARREGADOR",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 8,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "23/09/2026 14:09"
     }
   ]
 }
