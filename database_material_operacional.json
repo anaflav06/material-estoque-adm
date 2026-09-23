@@ -371,6 +371,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "23/09/2026 14:01"
+    },
+    {
+      "id": "20260923140227712365",
+      "nome": "TECLADO",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 0,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "23/09/2026 14:02"
     }
   ]
 }
