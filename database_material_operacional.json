@@ -419,6 +419,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "23/09/2026 14:11"
+    },
+    {
+      "id": "20260923141154634172",
+      "nome": "CABO TIPO C",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 3,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "23/09/2026 14:11"
     }
   ]
 }
