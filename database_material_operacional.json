@@ -301,18 +301,6 @@
       "quantidade_por_embalagem": 1
     },
     {
-      "id": "20260917203633135247",
-      "nome": "TESOURA",
-      "unidade": "Unidade",
-      "unidade_estoque": "Unidade",
-      "unidade_minimo": "Unidade",
-      "quantidade_por_embalagem": 1,
-      "quantidade": 4,
-      "minimo": 1,
-      "observacao": "",
-      "atualizado_em": "02/10/2026 19:27"
-    },
-    {
       "id": "20260917203945586927",
       "nome": "PASTA  L",
       "unidade": "Pacote",
