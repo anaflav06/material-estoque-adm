@@ -455,6 +455,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "02/10/2026 19:28"
+    },
+    {
+      "id": "20261016185032456286",
+      "nome": "CONTROLE REMOTO PARA O PORTÃO",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 2,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/10/2026 18:50"
     }
   ]
 }
