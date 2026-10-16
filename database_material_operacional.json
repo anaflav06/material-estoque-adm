@@ -515,6 +515,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/10/2026 18:56"
+    },
+    {
+      "id": "20261016185642126082",
+      "nome": "RODINHAS DE CADEIRA SEM PINO 10MM COM ADAPTADOR",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 4,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/10/2026 18:56"
     }
   ]
 }
