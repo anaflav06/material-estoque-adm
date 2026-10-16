@@ -491,6 +491,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/10/2026 18:53"
+    },
+    {
+      "id": "20261016185534680778",
+      "nome": "RODINHAS DE CADEIRA  - SEM PINO 9,5M",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 2,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/10/2026 18:55"
     }
   ]
 }
