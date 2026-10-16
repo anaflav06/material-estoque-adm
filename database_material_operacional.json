@@ -503,6 +503,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/10/2026 18:55"
+    },
+    {
+      "id": "20261016185609393082",
+      "nome": "RODINHAS DE CADEIRA COM PINO 5M SUPORTA ATÉ 40KG",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 3,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/10/2026 18:56"
     }
   ]
 }
