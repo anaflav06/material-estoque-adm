@@ -467,6 +467,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/10/2026 18:50"
+    },
+    {
+      "id": "20261016185255843391",
+      "nome": "QUICK CHARGE - CARREGADOR DE CELULAR PARA CARRO",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 2,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "16/10/2026 18:52"
     }
   ]
 }
