@@ -563,6 +563,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "16/10/2026 19:26"
+    },
+    {
+      "id": "20261030191112197047",
+      "nome": "EXTENSÃO  COM DOIS FUROS",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 3,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "30/10/2026 19:11"
     }
   ]
 }
