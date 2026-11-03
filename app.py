@@ -263,10 +263,8 @@ def carregar_banco():
             salvar_local(data)
             return data, "GitHub"
         except Exception as e:
-            st.warning(
-                "Não consegui carregar o banco permanente do GitHub. "
-                "Estou usando o arquivo local nesta sessão."
-            )
+            st.error("Não foi possível acessar o banco permanente do GitHub. Nenhuma alteração será permitida até restabelecer a conexão.")
+            st.stop()
 
     return carregar_local(), "Local"
 
@@ -300,14 +298,60 @@ def fmt_num(v):
         return "0"
 
 
+def unidade_atual(produto):
+    return produto.get("unidade_estoque", produto.get("unidade", "Unidade"))
+
+
+def unidade_minima(produto):
+    return produto.get("unidade_minimo", produto.get("unidade", "Unidade"))
+
+
+def valores_comparaveis(produto):
+    atual = int(produto.get("quantidade", 0) or 0)
+    minimo = int(produto.get("minimo", 0) or 0)
+    ue, um = unidade_atual(produto), unidade_minima(produto)
+    if ue == um:
+        return atual, minimo
+    # Conversão suportada: Unidade versus uma embalagem cadastrada.
+    if "Unidade" not in (ue, um):
+        return None
+    fator = int(produto.get("quantidade_por_embalagem", 0) or 0)
+    if fator <= 1:
+        return None
+    return (atual if ue == "Unidade" else atual * fator,
+            minimo if um == "Unidade" else minimo * fator)
+
+
+def status_produto(produto):
+    valores = valores_comparaveis(produto)
+    if valores is None:
+        return "VERIFICAR UNIDADES"
+    atual, minimo = valores
+    if atual < minimo:
+        return "COMPRAR"
+    if atual == minimo:
+        return "MÍNIMO ATINGIDO"
+    return "OK"
+
+
 def precisa_comprar(produto):
-    return float(produto.get("quantidade", 0)) <= float(produto.get("minimo", 0))
+    return status_produto(produto) == "COMPRAR"
 
 
 def qtd_compra(produto):
-    qtd = float(produto.get("quantidade", 0))
-    minimo = float(produto.get("minimo", 0))
-    return max(minimo - qtd, 0)
+    import math
+    valores = valores_comparaveis(produto)
+    if valores is None:
+        return 0
+    faltam = max(valores[1] - valores[0], 0)
+    if not faltam:
+        return 0
+    if unidade_atual(produto) == unidade_minima(produto):
+        return faltam
+    if unidade_minima(produto) == "Unidade":
+        return faltam
+    fator = int(produto.get("quantidade_por_embalagem", 0) or 0)
+    return math.ceil(faltam / fator)
 
 
 def unidade_por_extenso(unidade, quantidade):
@@ -352,13 +396,13 @@ def mensagem_wpp(produtos):
 
     for p in sorted(lista, key=lambda x: x.get("nome", "").lower()):
         comprar = int(qtd_compra(p))
-        unidade = unidade_por_extenso(p.get("unidade", "Unidade"), comprar)
+        unidade = unidade_por_extenso(unidade_minima(p), comprar)
 
         linhas.extend([
             f"🔹 *{p.get('nome','').upper()}*",
             f"Comprar: *{comprar} {unidade}*",
-            f"Estoque atual: {fmt_num(p.get('quantidade',0))}",
-            f"Estoque mínimo: {fmt_num(p.get('minimo',0))}",
+            f"Estoque atual: {fmt_num(p.get('quantidade',0))} {unidade_por_extenso(unidade_atual(p), int(p.get('quantidade',0)))}",
+            f"Estoque mínimo: {fmt_num(p.get('minimo',0))} {unidade_por_extenso(unidade_minima(p), int(p.get('minimo',0)))}",
             ""
         ])
 
@@ -404,7 +448,7 @@ produtos = db["produtos"]
 
 total = len(produtos)
 alertas = len([p for p in produtos if precisa_comprar(p)])
-ok = total - alertas
+ok = len([p for p in produtos if status_produto(p) == "OK"])
 
 c1, c2, c3 = st.columns(3)
 c1.metric("Produtos", total)
@@ -448,15 +492,15 @@ with aba1:
 
         for p in sorted(filtrados, key=lambda x: x.get("nome", "").lower()):
             css = "card-alerta" if precisa_comprar(p) else "card-ok"
-            status = "⚠️ COMPRAR" if precisa_comprar(p) else "✅ OK"
+            status = {"COMPRAR":"⚠️ COMPRAR", "MÍNIMO ATINGIDO":"🟡 MÍNIMO ATINGIDO", "OK":"✅ OK", "VERIFICAR UNIDADES":"⚠️ VERIFICAR UNIDADES"}[status_produto(p)]
 
             st.markdown(
                 f"""
                 <div class="{css}">
                     <b>{p.get('nome','')}</b><br>
-                    Estoque: <b>{fmt_num(p.get('quantidade',0))} {p.get('unidade','Unidade')}</b>
+                    Estoque: <b>{fmt_num(p.get('quantidade',0))} {unidade_por_extenso(unidade_atual(p), int(p.get('quantidade',0)))}</b>
                     &nbsp;&nbsp;|&nbsp;&nbsp;
-                    Mínimo: <b>{fmt_num(p.get('minimo',0))} {p.get('unidade','Unidade')}</b>
+                    Mínimo: <b>{fmt_num(p.get('minimo',0))} {unidade_por_extenso(unidade_minima(p), int(p.get('minimo',0)))}</b>
                     &nbsp;&nbsp;|&nbsp;&nbsp;
                     {status}
                 </div>
@@ -567,11 +611,11 @@ with aba3:
                 novo_minimo=st.number_input("Estoque mínimo",min_value=0,value=int(produto.get("minimo",0)),step=1)
                 nova_um=st.selectbox("Unidade do estoque mínimo",opcoes,index=opcoes.index(um) if um in opcoes else 0)
 
-            conversao=int(produto.get("quantidade_por_embalagem",1) or 1)
+            conversao=int(produto.get("quantidade_por_embalagem",0) or 0)
             if nova_ue != nova_um:
                 embalagem=nova_um if nova_um!="Unidade" else nova_ue
                 st.info("As unidades são diferentes. Informe a conversão para o cálculo da reposição.")
-                conversao=st.number_input(f"Quantas Unidades existem em 1 {embalagem}?",min_value=1,value=max(conversao,1),step=1)
+                conversao=st.number_input(f"Quantas Unidades existem em 1 {embalagem}?",min_value=1,value=max(conversao,2),step=1)
 
             observacao_editada=st.text_input("Observação",value=produto.get("observacao",""))
             salvar_atualizacao=st.form_submit_button("💾 Salvar informações",use_container_width=True,type="primary")
@@ -627,6 +671,12 @@ with aba4:
         st.warning(
             f"{len(lista_compras)} produto(s) precisam de reposição."
         )
+
+    minimo_atingido = sum(status_produto(p) == "MÍNIMO ATINGIDO" for p in produtos)
+    if minimo_atingido:
+        st.info(f"{minimo_atingido} produto(s) no estoque mínimo, sem necessidade de compra calculada.")
+    if any(status_produto(p) == "VERIFICAR UNIDADES" for p in produtos):
+        st.error("Há produtos com unidades diferentes sem conversão válida. Revise-os em Atualizar estoque.")
 
     mensagem = mensagem_wpp(produtos)
 
