@@ -587,6 +587,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "03/11/2026 11:36"
+    },
+    {
+      "id": "20261109182025051746",
+      "nome": "PORTA RETRATO",
+      "unidade": "Unidade",
+      "unidade_estoque": "Unidade",
+      "unidade_minimo": "Unidade",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 7,
+      "minimo": 10,
+      "observacao": "",
+      "atualizado_em": "09/11/2026 18:20"
     }
   ]
 }
