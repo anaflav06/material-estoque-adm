@@ -611,6 +611,18 @@
       "minimo": 1,
       "observacao": "",
       "atualizado_em": "11/11/2026 15:51"
+    },
+    {
+      "id": "20261111155214937348",
+      "nome": "SAQUINHO PARA DOCUMENTO COM FUROS",
+      "unidade": "Pacote",
+      "unidade_estoque": "Pacote",
+      "unidade_minimo": "Pacote",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 0,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "11/11/2026 15:52"
     }
   ]
 }
