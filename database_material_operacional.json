@@ -475,10 +475,10 @@
       "unidade_estoque": "Unidade",
       "unidade_minimo": "Unidade",
       "quantidade_por_embalagem": 1,
-      "quantidade": 0,
+      "quantidade": 1,
       "minimo": 1,
       "observacao": "",
-      "atualizado_em": "09/11/2026 18:12"
+      "atualizado_em": "11/11/2026 15:50"
     },
     {
       "id": "20261016185330198344",
