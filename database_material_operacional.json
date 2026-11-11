@@ -599,6 +599,18 @@
       "minimo": 10,
       "observacao": "",
       "atualizado_em": "10/11/2026 18:24"
+    },
+    {
+      "id": "20261111155149108534",
+      "nome": "SAQUINHO PARA ARQUIVO 25X35",
+      "unidade": "Pacote",
+      "unidade_estoque": "Pacote",
+      "unidade_minimo": "Pacote",
+      "quantidade_por_embalagem": 1,
+      "quantidade": 3,
+      "minimo": 1,
+      "observacao": "",
+      "atualizado_em": "11/11/2026 15:51"
     }
   ]
 }
